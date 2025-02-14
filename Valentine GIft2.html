@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Surprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Halaman Password -->
+    <div id="lockscreen">
+        <div class="lock-container">
+            <h2>Enter Passcode</h2>
+            <input type="password" id="passwordInput" disabled>
+            <div class="keypad">
+                <button onclick="addNumber(1)">1</button>
+                <button onclick="addNumber(2)">2</button>
+                <button onclick="addNumber(3)">3</button>
+                <button onclick="addNumber(4)">4</button>
+                <button onclick="addNumber(5)">5</button>
+                <button onclick="addNumber(6)">6</button>
+                <button onclick="addNumber(7)">7</button>
+                <button onclick="addNumber(8)">8</button>
+                <button onclick="addNumber(9)">9</button>
+                <button onclick="clearPassword()">✖</button>
+                <button onclick="addNumber(0)">0</button>
+                <button onclick="checkPassword()">✔</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Halaman Surat -->
+    <div id="suratPage" style="display: none;">
+        <h1>Surat Spesial</h1>
+        <div class="surat-container">
+            <p>Klik di tengah untuk membuka isi surat</p>
+            <div class="heart-container" onclick="openLetter()">
+                ❤️
+            </div>
+            <div id="isiSurat" class="hidden">
+                <p>Hai nazlaa, selamat Hari Valentine! ❤️</p>
+                <p>Semoga hari-harimu selalu bahagia broo!</p>
+            </div>
+        </div>
+        <button onclick="nextToGallery()">Lanjut ke Galeri</button>
+    </div>
+
+    <!-- Halaman Galeri -->
+    <div id="galleryPage" style="display: none;">
+        <h1>Galeri Papnya siapa nich </h1>
+        <div class="gallery">
+            <img src="foto1.jpg" alt="Foto 1">
+            <img src="foto2.jpg" alt="Foto 2">
+            <img src="foto3.jpg" alt="Foto 3">
+            <img src="foto4.jpg" alt="Foto 4">
+        </div>
+        <button onclick="exitMessage()">Keluar</button>
+    </div>
+
+    <!-- Pesan sebelum keluar -->
+    <div id="exitMessage" style="display: none;">
+        <h2>Aku bukan buaya! 🐊❤️</h2>
+        <button onclick="closePage()">Tutup</button>
+    </div>
+
+    <!-- Pemutar Musik -->
+    <audio controls id="musicPlayer">
+        <source src="About you.mp3" type="audio/mp3">
+        Browser Anda tidak mendukung pemutar audio.
+    </audio>
+
+    <!-- Pilihan Background -->
+    <div id="backgroundSelector">
+        <label for="backgrounds">Ganti Background:</label>
+        <select id="backgrounds" onchange="changeBackground()">
+            <option value="love">Love</option>
+            <option value="stars">Bintang</option>
+            <option value="gift">Kado</option>
+            <option value="headset">Headset</option>
+        </select>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
